@@ -459,6 +459,23 @@ We are committed to providing a welcoming and inclusive experience for everyone.
 
 This project was previously hosted at [https://github.com/Mrshahidali420/youtube-shorts-automation](https://github.com/Mrshahidali420/youtube-shorts-automation) and has been migrated to this new repository for better organization and continued development.
 
+## API Keys and Authentication
+
+This project requires several API keys and authentication files to function properly:
+
+1. **Google Gemini API Key**: Required for AI-powered features like metadata generation and error analysis
+   - Get your API key from: https://aistudio.google.com/app/apikey
+   - Add it to `config/config.txt` as both `API_KEY` and `GEMINI_API_KEY`
+
+2. **YouTube API Authentication**: Required for YouTube API access (analytics, playlist management)
+   - Create a project in the [Google Cloud Console](https://console.cloud.google.com/)
+   - Enable the YouTube Data API v3
+   - Create OAuth 2.0 credentials (Desktop application type)
+   - Download the credentials as `client_secret.json` and place it in the `data/` directory
+   - The first time you run scripts that use the YouTube API, you'll be prompted to authenticate
+
+These sensitive files are excluded from the repository by the `.gitignore` file for security reasons. You must set them up locally after cloning the repository.
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details. The MIT License is a permissive license that allows you to use, modify, and distribute this software for both private and commercial purposes.
