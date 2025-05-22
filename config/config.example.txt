@@ -1,0 +1,94 @@
+# YouTube Shorts Automation Configuration
+
+# API Keys (Required for both downloader and uploader)
+# IMPORTANT: Replace these placeholders with your actual API keys
+# DO NOT commit this file with real API keys to version control
+API_KEY=your_gemini_api_key_here
+GEMINI_API_KEY=your_gemini_api_key_here  # Same as API_KEY, used for AI features
+
+# Download and Upload Limits
+MAX_DOWNLOADS=24        # Maximum number of videos to download per run
+MAX_UPLOADS=24         # Maximum number of videos to upload per run
+MAX_KEYWORDS=200       # Maximum number of keywords to store
+
+# Advanced Downloader Settings
+YT_SEARCH_RESULTS_PER_KEYWORD=40  # Number of search results to fetch per keyword
+VIDEOS_TO_DOWNLOAD_PER_KEYWORD=5  # Max videos to download for a single keyword
+KEYWORDS_TO_PROCESS_PER_RUN=12    # Number of keywords to select for each run
+MIN_KEYWORDS_THRESHOLD=25         # Minimum number of keywords before generating new ones
+NEW_KEYWORDS_TO_GENERATE=30       # Number of new keywords to generate when needed
+TOP_KEYWORDS_TO_USE=5             # Number of top-performing keywords to use for new keyword generation
+METADATA_TIMEOUT_SECONDS=15       # Timeout for Gemini API call
+
+# Metadata Quality Thresholds
+METADATA_ERROR_THRESHOLD=0.15     # Error rate threshold to trigger prompt improvement (15%)
+METADATA_TIMEOUT_THRESHOLD=0.10   # Timeout rate threshold to trigger prompt improvement (10%)
+VALIDATION_WARNING_THRESHOLD=0.20 # Validation warning threshold to trigger prompt improvement (20%)
+
+# Upload Settings
+UPLOAD_CATEGORY=Gaming  # YouTube category for uploads
+
+# --- Scheduling Settings ---
+
+# Mode for scheduling uploads. Options:
+#   analytics_priority = Automatically schedule videos during peak viewer hours based on YouTube Analytics data.
+#   default_interval   = Publish first video now, schedule subsequent videos at fixed interval.
+#   custom_tomorrow    = Try custom schedule times from config (for tomorrow onwards), then use fixed interval fallback.
+SCHEDULING_MODE=analytics_priority
+
+# Fallback interval (in minutes) used when:
+# - analytics_priority mode can't find a suitable peak hour
+# - default_interval mode for all videos after the first
+# - custom_tomorrow mode when custom slots are exhausted/invalid
+SCHEDULE_INTERVAL_MINUTES=60
+
+# List of preferred schedule times (HH:MM AM/PM format, comma-separated) for 'custom_tomorrow' mode.
+# The script will try to use these times sequentially for videos in a run, always targeting TOMORROW's date or later.
+CUSTOM_SCHEDULE_TIMES=6:00 AM, 9:00 AM, 11:30 AM, 3:00 PM, 6:00 PM, 10:00 PM
+
+# Minimum number of minutes ahead of the current time a video can be scheduled.
+# Prevents scheduling too close to the current time, which YouTube might reject.
+MIN_SCHEDULE_AHEAD_MINUTES=20
+
+# --- Analytics-Based Scheduling Settings ---
+# These settings apply to the analytics_priority mode
+
+# Number of days of analytics data to analyze for determining peak hours
+ANALYTICS_DAYS_TO_ANALYZE=7
+
+# Number of peak hours to identify from analytics data (1-24)
+# Higher values include more hours but may dilute the focus on truly peak times
+ANALYTICS_PEAK_HOURS_COUNT=5
+
+# How long to cache analytics data before refreshing (in hours)
+# Lower values provide more up-to-date data but increase API calls
+ANALYTICS_CACHE_EXPIRY_HOURS=24
+
+# Browser Profile
+# Path to Firefox profile directory. Create a dedicated profile for YouTube uploads.
+# Example: C:\Users\YourUsername\AppData\Roaming\Mozilla\Firefox\Profiles\yourprofile.default
+PROFILE_PATH=path/to/your/firefox/profile
+
+# YouTube Limits (Character/Count Limits for Uploads)
+YOUTUBE_DESCRIPTION_LIMIT=4950
+YOUTUBE_TAG_LIMIT=100
+YOUTUBE_TOTAL_TAGS_LIMIT=460
+YOUTUBE_MAX_TAGS_COUNT=40
+
+# Debug Recording Settings
+# Enable screen recording for debugging (True/False). Requires FFmpeg installed.
+ENABLE_DEBUG_RECORDING=False
+# Optional: Specify full path to ffmpeg executable if not found automatically in system PATH
+FFMPEG_PATH=path/to/ffmpeg.exe
+
+# --- Excel Archiving Settings ---
+# Number of days to keep entries in the main Excel sheets before moving to archive sheets
+# Older entries will be moved to "Downloaded_Archive" and "Uploaded_Archive" sheets
+EXCEL_ARCHIVE_DAYS=180
+
+# --- Channel-Based Downloader Settings ---
+# SEO settings for channel-based downloader
+SEO_CHANNEL_NAME=Your Channel Name
+SEO_CHANNEL_TOPIC=Your channel topics (comma separated)
+SEO_EXAMPLE_TAGS=example, tags, for, your, videos
+SEO_EXAMPLE_HASHTAGS=#example #hashtags #for #your #videos

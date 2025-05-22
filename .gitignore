@@ -1,0 +1,92 @@
+# Config and sensitive files
+config/config.txt
+config/channels.txt
+config/niche.txt
+*.key
+*.pem
+*.cert
+*.p12
+*.pfx
+*.password
+*.token
+*token.json
+*token.pickle
+*client_secrets.json
+*client_secret.json
+*credentials.json
+.env
+.env.*
+.secret
+.netrc
+
+# Large binary files
+*.exe
+drivers/ffmpeg.exe
+drivers/geckodriver.exe
+
+# Downloaded videos and metadata
+output/shorts_downloads/
+output/shorts_metadata/
+output/scheduled_videos/
+
+# Cache files
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Generated data files
+data/generated_keywords_cache.json
+data/playlist_cache.json
+data/metadata_metrics.json
+data/performance_metrics.json
+data/upload_correlation_cache.json
+logs/tuning_suggestions.log
+# Removed data/ab_test_data.json as part of A/B testing removal
+
+# Excel files with data
+data/*.xlsx
+
+# Log files
+logs/*.log
+logs/*_log.txt
+logs/*error_log.txt
+logs/uploader_analysis_log.txt
+logs/performance_tracker_error_log.txt
+
+# Archive files
+*.rar
+*.zip
+
+# Backup files
+backups/
+backups/*.bak
+backups/*~
+backups/*.backup
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+.env/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+pyrightconfig.json
+.pyright
+.pylintrc
+.flake8
+.mypy_cache/
+
+# Documentation and help files
+HOW TO SETUP.docx
+--help/
