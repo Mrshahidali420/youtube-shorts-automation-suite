@@ -1,6 +1,6 @@
 # YouTube Shorts Automation Suite with Self-Improvement
 
-[![GitHub Release](https://img.shields.io/badge/release-v1.4.0-blue)](https://github.com/Mrshahidali420/youtube-shorts-automation-suite/releases)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/Mrshahidali420/youtube-shorts-automation-suite)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This suite of scripts automates the entire YouTube Shorts workflow - from finding videos to tracking performance. It includes advanced self-improvement features that use AI to analyze performance, optimize metadata, and suggest improvements.
@@ -248,9 +248,7 @@ The system uses an Excel file (`shorts_data.xlsx`) with four sheets:
 
 ## Installation
 
-### Option 1: Standard Installation
-
-1. Download the [latest release](https://github.com/Mrshahidali420/youtube-shorts-automation-suite/releases/latest) or clone this repository
+1. Clone this repository: `git clone https://github.com/Mrshahidali420/youtube-shorts-automation-suite.git`
 2. Install required packages: `pip install -r requirements.txt`
 3. Create configuration files from templates:
    - Copy `templates/config.txt.template` to `config.txt` and update with your settings
@@ -258,41 +256,13 @@ The system uses an Excel file (`shorts_data.xlsx`) with four sheets:
    - Copy `templates/channels.txt.template` to `channels.txt` and add your target channels (if using channel-based downloader)
 4. Run each component as needed (see 'Running Individual Components' section below)
 
-### Option 2: Package Installation
-
-1. Clone this repository
-2. Install the package in development mode: `pip install -e .`
-3. Set up your workspace: `yt-setup` or `python -m youtube_shorts.setup_workspace`
-4. Create configuration files from templates:
-   - Copy `templates/config.txt.template` to `config.txt` and update with your settings
-   - Copy `templates/niche.txt.template` to `niche.txt` and add your target niche (e.g., "GTA 6")
-   - Copy `templates/channels.txt.template` to `channels.txt` and add your target channels (if using channel-based downloader)
-5. Use the command-line tools:
-   ```
-   yt-track    # Run performance tracker
-   yt-download # Run keyword-based downloader
-   yt-channel  # Run channel-based downloader
-   yt-upload   # Run uploader
-   ```
-
 ## Running Individual Components
-
-### Using Python Directly
 
 ```
 python performance_tracker.py
 python downloader_keyword.py   # Run keyword-based downloader
 python downloader_channel.py   # Run channel-based downloader
 python uploader.py
-```
-
-### Using Package Commands (if installed as a package)
-
-```
-yt-track    # Run performance tracker
-yt-download # Run keyword-based downloader
-yt-channel  # Run channel-based downloader
-yt-upload   # Run uploader
 ```
 
 ### Setting Up Channel-Based Downloads
@@ -337,17 +307,16 @@ The channel-based downloader will:
 - `excel_utils.py`: Utilities for robust Excel file handling
 - `youtube_limits.py`: Constants for YouTube platform limits
 
-### Package Structure
-- `youtube_shorts/`: Package directory
+### Directory Structure
+- `youtube_shorts/`: Main code directory
   - `__init__.py`: Package initialization
   - `performance_tracker.py`: Performance tracking module
-  - `downloader.py`: Video downloading module (keyword-based)
+  - `downloader_keyword.py`: Video downloading module (keyword-based)
+  - `downloader_channel.py`: Video downloading module (channel-based)
   - `uploader.py`: Video uploading module
   - `excel_utils.py`: Excel utilities module
-  - `setup_workspace.py`: Workspace setup utility
 
 ### Configuration and Data Files
-- `setup.py`: Package setup script
 - `requirements.txt`: Required dependencies
 - `templates/`: Directory containing template files
   - `templates/config.txt.template`: Template for configuration settings
@@ -370,78 +339,31 @@ The channel-based downloader will:
 - `templates/`: Contains template files for user configuration
 - `youtube_shorts/data/`: Contains template files for package configuration
 
-## Releases
+## Features History
 
-### Latest Release: [v1.4.0](https://github.com/Mrshahidali420/youtube-shorts-automation-suite/releases/tag/v1.4.0)
+### Current Version Features
 
-The latest stable release of the YouTube Shorts Automation Suite is v1.4.0. You can:
-
-- **Download**: Get the [ZIP file](https://github.com/Mrshahidali420/youtube-shorts-automation-suite/archive/refs/tags/v1.4.0.zip) directly
-- **Clone**: Use Git to clone a specific version: `git clone -b v1.4.0 https://github.com/Mrshahidali420/youtube-shorts-automation-suite.git`
-- **Install**: Install with pip: `pip install git+https://github.com/Mrshahidali420/youtube-shorts-automation-suite.git@v1.4.0`
-
-### Release Notes
-
-#### v1.4.0 - Latest Release
-
-**New Features:**
-- **Analytics Priority Mode**: New scheduling mode that automatically prioritizes peak viewer hours
+**Analytics Features:**
+- **Analytics Priority Mode**: Scheduling mode that automatically prioritizes peak viewer hours
 - **Fully Automatic Scheduling**: Simplified configuration with intelligent, data-driven scheduling
 - **Peak Hour Detection**: Automatically identifies peak viewer hours for your channel
 - **Smart Time Slot Selection**: Finds the next available peak hour for each video
 - **Analytics Caching**: Caches analytics data to minimize API calls and improve performance
 
-**Improvements:**
-- Enhanced scheduling logic to optimize video visibility
-- Simplified configuration with sensible defaults
-- Improved documentation for analytics-based scheduling
-- Added graceful fallback when analytics data is unavailable
-- Made analytics-based scheduling the default mode
+**Excel Management Features:**
+- **Excel Archiving**: Automatic archiving of old entries to archive sheets to keep main sheets manageable
+- **Metadata Cross-Validation**: Validation checks for generated metadata to ensure consistency and quality
+- **Excel Auto-Closing Functionality**: Robust Excel handling to prevent permission errors when saving Excel files
+- **Excel Utilities Module**: Dedicated module for Excel operations with process management
+- **Automatic Backup Creation**: Automatic backup of Excel files before saving
+- **Retry Mechanics**: Retry logic for Excel operations with exponential backoff
+- **Fallback Save Methods**: Multiple fallback methods for saving Excel data when primary methods fail
 
-#### v1.3.0
-
-**New Features:**
-- **Excel Archiving**: Added automatic archiving of old entries to archive sheets to keep main sheets manageable
-- **Metadata Cross-Validation**: Added validation checks for generated metadata to ensure consistency and quality
-- **Configuration for Archiving**: Added EXCEL_ARCHIVE_DAYS setting to control when entries are archived
-
-**Improvements:**
-- Enhanced error handling for Excel archiving operations
-- Improved metadata quality through validation checks
-- Added detailed logging for archiving operations
-
-#### v1.2.0
-
-**New Features:**
-- **Excel Auto-Closing Functionality**: Added robust Excel handling to prevent permission errors when saving Excel files
-- **Excel Utilities Module**: Created a dedicated module for Excel operations with process management
-- **Automatic Backup Creation**: Added automatic backup of Excel files before saving
-- **Retry Mechanics**: Implemented retry logic for Excel operations with exponential backoff
-- **Fallback Save Methods**: Added multiple fallback methods for saving Excel data when primary methods fail
-
-**Improvements:**
-- Enhanced error handling for Excel operations
-- Added graceful degradation when Excel utilities are not available
-- Improved logging for Excel-related operations
-
-#### v1.1.0
-
-**New Features:**
-- **Dynamic Category Suggestion**: Added AI-powered YouTube category suggestion based on video content
-- **Smart Category Selection**: Uploader now uses AI-suggested categories with fallback to default configuration
-- **Channel-Based Downloader**: Added new script to download videos from specific YouTube channels
+**Content Features:**
+- **Dynamic Category Suggestion**: AI-powered YouTube category suggestion based on video content
+- **Smart Category Selection**: Uses AI-suggested categories with fallback to default configuration
+- **Channel-Based Downloader**: Script to download videos from specific YouTube channels
 - **Integrated Downloaders**: Both keyword-based and channel-based downloaders work together seamlessly
-
-**Bug Fixes:**
-- Fixed issue where info.json file was deleted before tag extraction, causing "Info file not found" warnings
-- Various code improvements and optimizations
-
-See the [releases page](https://github.com/Mrshahidali420/youtube-shorts-automation-suite/releases) for detailed release notes, which include:
-
-- New features and improvements
-- Bug fixes
-- Breaking changes (if any)
-- Installation instructions
 
 ## Open Source
 
