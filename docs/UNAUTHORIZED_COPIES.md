@@ -24,7 +24,7 @@ The following commit hashes appear in both repositories, which is definitive pro
 
 ### Timeline
 
-1. Original repository (Mrshahidali420/youtube-shorts-automation) was created first
+1. Original repository (Mrshahidali420/youtube-shorts-automation-suite, previously Mrshahidali420/youtube-shorts-automation) was created first
 2. Unauthorized copy (waelsultan28/youtube-shorts-automation) was created on April 26, 2025
 3. User "superman32432432" made commits to the unauthorized copy
 4. The same user then made similar commits to the original repository starting on May 2, 2025

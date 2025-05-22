@@ -1,6 +1,6 @@
 # YouTube Shorts Automation Suite with Self-Improvement
 
-[![GitHub Release](https://img.shields.io/badge/release-v1.4.0-blue)](https://github.com/Mrshahidali420/youtube-shorts-automation/releases)
+[![GitHub Release](https://img.shields.io/badge/release-v1.4.0-blue)](https://github.com/Mrshahidali420/youtube-shorts-automation-suite/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This suite of scripts automates the entire YouTube Shorts workflow - from finding videos to tracking performance. It includes advanced self-improvement features that use AI to analyze performance, optimize metadata, and suggest improvements.
@@ -250,7 +250,7 @@ The system uses an Excel file (`shorts_data.xlsx`) with four sheets:
 
 ### Option 1: Standard Installation
 
-1. Download the [latest release](https://github.com/Mrshahidali420/youtube-shorts-automation/releases/latest) or clone this repository
+1. Download the [latest release](https://github.com/Mrshahidali420/youtube-shorts-automation-suite/releases/latest) or clone this repository
 2. Install required packages: `pip install -r requirements.txt`
 3. Create configuration files from templates:
    - Copy `templates/config.txt.template` to `config.txt` and update with your settings
@@ -372,13 +372,13 @@ The channel-based downloader will:
 
 ## Releases
 
-### Latest Release: [v1.4.0](https://github.com/Mrshahidali420/youtube-shorts-automation/releases/tag/v1.4.0)
+### Latest Release: [v1.4.0](https://github.com/Mrshahidali420/youtube-shorts-automation-suite/releases/tag/v1.4.0)
 
 The latest stable release of the YouTube Shorts Automation Suite is v1.4.0. You can:
 
-- **Download**: Get the [ZIP file](https://github.com/Mrshahidali420/youtube-shorts-automation/archive/refs/tags/v1.4.0.zip) directly
-- **Clone**: Use Git to clone a specific version: `git clone -b v1.4.0 https://github.com/Mrshahidali420/youtube-shorts-automation.git`
-- **Install**: Install with pip: `pip install git+https://github.com/Mrshahidali420/youtube-shorts-automation.git@v1.4.0`
+- **Download**: Get the [ZIP file](https://github.com/Mrshahidali420/youtube-shorts-automation-suite/archive/refs/tags/v1.4.0.zip) directly
+- **Clone**: Use Git to clone a specific version: `git clone -b v1.4.0 https://github.com/Mrshahidali420/youtube-shorts-automation-suite.git`
+- **Install**: Install with pip: `pip install git+https://github.com/Mrshahidali420/youtube-shorts-automation-suite.git@v1.4.0`
 
 ### Release Notes
 
@@ -436,7 +436,7 @@ The latest stable release of the YouTube Shorts Automation Suite is v1.4.0. You 
 - Fixed issue where info.json file was deleted before tag extraction, causing "Info file not found" warnings
 - Various code improvements and optimizations
 
-See the [releases page](https://github.com/Mrshahidali420/youtube-shorts-automation/releases) for detailed release notes, which include:
+See the [releases page](https://github.com/Mrshahidali420/youtube-shorts-automation-suite/releases) for detailed release notes, which include:
 
 - New features and improvements
 - Bug fixes
@@ -454,6 +454,10 @@ We welcome contributions of all kinds - from bug reports to feature requests to 
 ### Code of Conduct
 
 We are committed to providing a welcoming and inclusive experience for everyone. Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before participating in our community.
+
+## Repository History
+
+This project was previously hosted at [https://github.com/Mrshahidali420/youtube-shorts-automation](https://github.com/Mrshahidali420/youtube-shorts-automation) and has been migrated to this new repository for better organization and continued development.
 
 ## License
 

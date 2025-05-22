@@ -14,7 +14,7 @@ We take the security of YouTube Shorts Automation seriously. If you believe you'
 
 ### For Non-Critical Issues
 
-1. **Create an Issue**: For non-sensitive bugs or issues that don't expose user data or create significant risk, please [create an issue](https://github.com/Mrshahidali420/youtube-shorts-automation/issues/new/choose) using our bug report template.
+1. **Create an Issue**: For non-sensitive bugs or issues that don't expose user data or create significant risk, please [create an issue](https://github.com/Mrshahidali420/youtube-shorts-automation-suite/issues/new/choose) using our bug report template.
 
 ### For Security Vulnerabilities
 
